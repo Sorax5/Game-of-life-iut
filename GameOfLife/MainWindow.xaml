@@ -1,0 +1,47 @@
+﻿<Window x:Class="GameOfLifeHMI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameOfLifeHMI"
+        mc:Ignorable="d"
+        Title="The Game Of Life" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Rows :" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" x:Name="rows" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="10"/>
+            <Label Grid.Column="2" Content="Columns :" HorizontalAlignment="Right" VerticalAlignment="Center" />
+            <TextBox Grid.Column="3" x:Name="columns" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="10" />
+            <Button Grid.Column="4" Content="Init random" VerticalAlignment="Center" Margin="10" Click="InitRandom" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
+                <Label Content="Time of evolution (ms)" />
+                <TextBox x:Name="timeMS" Text="50" HorizontalContentAlignment="Center" />
+                <Button Content="Start" Margin="10" Click="Start" />
+                <Button Content="Stop" Margin="10" Click="Stop" />
+
+            </StackPanel>
+            <Image x:Name="board" Grid.Column="1" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SnapsToDevicePixels="True">
+
+            </Image>
+        </Grid>
+    </Grid>
+</Window>
